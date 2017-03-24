@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressLayouts = require('express-ejs-layouts');
 
-var index = require('./routes/index');
+var index = require('./routes/default');
 
 var app = express();
 
@@ -24,8 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next)=>{
   res.locals.site = {
-        title: 'The Gameroom',
-        description: 'A boilerplate for a simple web application with a Node.JS and Express backend, with an EJS template with using Twitter Bootstrap.'
+    title: 'Discuss Gaming',
   };
   next();
 })
@@ -48,6 +47,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 module.exports = app;
