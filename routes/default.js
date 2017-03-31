@@ -5,7 +5,12 @@ router.get('/', function(req, res, next) {
   res.render('home');
 });
 
-router.get('/meh.ejs', function(req, res, next) {
+router.get('/meh', function(req, res, next) {
   res.render('meh');
 });
+
+router.get('/Signin', function(req, res, next) {
+  res.render('signin');
+});
+
 module.exports = router;
